@@ -1,9 +1,9 @@
-### Tacker
+### 1. Tacker
 
 Tacker là một dịch vụ về Network Function Virtualization (NFV), quản lý Virtual Network Functions (VNF) chạy trên nền tảng đám mây OpenStack. Ưu điểm là nhỏ gọn, dễ sử dụng, có thể cài đặt trên cùng 1 máy (All in one) đầy đủ với hệ thống OpenStack bằng DevStack. Nhược điểm là chưa đầy đủ chức năng và toàn vẹn nếu so sánh với ONAP, OpenBaton, OPNFV.
 
 
-### Kiến trúc của Tacker
+### 2. Kiến trúc của Tacker
 Tacker bao gồm bốn thành phần chính: thư mục VNFD, thiết lập VNF, quản lý cấu hình VNF, và theo dõi VNF và sửa chữa tự động.
 
 <img src="/img/1.png">
@@ -27,11 +27,11 @@ Khi VNF được chỉ định sử dụng TOSCA NFV template, chúng có thể 
 •	VNF Configuration Management: Tacker sẽ chạy cấu hình đặc biệt cần thiết để điều khiển VNF thông qua trình điều khiển cấu hình. Quản lý cấu hình được thiết kế như một khung công tác có thể cắm được và các nhà cung cấp VNF khác nhau có thể viết các trình điều khiển cấu hình riêng cho các VNFs.
 Một phương pháp khác là sử dụng bộ điều khiển SDN. Đã có rất nhiều cuộc thảo luận về cách tích hợp SDN và NFV. Về Tacker sử dụng trình cắm thêm bộ điều khiển SDN, cách thúc đẩy cấu hình của VNF đặc biệt bằng cách sử dụng giao diện hướng nam của bộ điều khiển SDN là một ví dụ tốt.
 
-Theo dõi và sửa chữa tự động của VNF: Trách nhiệm chính của Tacker là theo dõi tình trạng của VNF. Thông qua một loạt các thông số kỹ thuật được thiết kế để hướng dẫn thiết kế các dự án OpenStack khác, Tacker có thể sử dụng các trình điều khiển giám sát có thể tải như icmp-ping và http-ping bất cứ lúc nào. 
+• 	Theo dõi và sửa chữa tự động của VNF: Trách nhiệm chính của Tacker là theo dõi tình trạng của VNF. Thông qua một loạt các thông số kỹ thuật được thiết kế để hướng dẫn thiết kế các dự án OpenStack khác, Tacker có thể sử dụng các trình điều khiển giám sát có thể tải như icmp-ping và http-ping bất cứ lúc nào. 
 Họ cũng được lên kế hoạch để tích hợp với Ceilometer, và bây giờ các nhà cung cấp VNF đã có thể viết trình điều khiển giám sát của riêng họ với các đặc tính giám sát đặc biệt.
 
 
-### Luồng làm việc của Tacker
+### 3. Luồng làm việc của Tacker
 
 Tacker workflow
 
@@ -105,7 +105,6 @@ Chỉnh sửa file tacker.conf : `vi /etc/tacker/tacker.conf`
 ``` sh			
 
 [DEFAULT]
-
 auth_strategy = keystone
 policy_file = /etc/tacker/policy.json
 debug = True
@@ -117,6 +116,7 @@ state_path = /var/lib/tacker
 
 [nfvo]
 vim_drivers = openstack
+
 [keystone_authtoken]
 memcached_servers = 192.168.239.190:11211
 region_name = RegionOne
@@ -128,10 +128,14 @@ project_name = services
 password = tacker
 auth_url = http://192.168.239.190:5000
 auth_uri = http://192.168.239.190:5000
+
 [agent]
 root_helper = sudo /usr/bin/tacker-rootwrap /etc/tacker/rootwrap.conf
+
 [database]
-connection = mysql://tacker:Welcome123@192.168.239.190:3306/tacker
+connection = mysql://tacker:Welcome123@192.168.239.190:3306/
+
+
 [tacker]
 monitor_driver = ping,http_ping
 ```
@@ -174,9 +178,9 @@ systemctl enable  openstack-tacker-server.service
 
 Giao diện dashboard:
 
-<img src="/img/5.jpg">
+<img src="/img/5.png">
 
-<img src="/img/6.jpg">
+<img src="/img/6.png">
 
 
 
