@@ -125,7 +125,7 @@ project_domain_name = Default
 user_domain_name = Default
 username = tacker
 project_name = services
-password = tacker
+password = Welcome123
 auth_url = http://192.168.239.190:5000
 auth_uri = http://192.168.239.190:5000
 
@@ -133,7 +133,7 @@ auth_uri = http://192.168.239.190:5000
 root_helper = sudo /usr/bin/tacker-rootwrap /etc/tacker/rootwrap.conf
 
 [database]
-connection = mysql://tacker:Welcome123@192.168.239.190:3306/
+connection = mysql://tacker:Welcome123@192.168.239.190:3306/tacker
 
 
 [tacker]
