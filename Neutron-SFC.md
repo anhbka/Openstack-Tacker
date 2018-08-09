@@ -17,6 +17,7 @@ Cài đặt packages:
 `yum install -y python-networking-sfc`
 
 Hoặc :
+
 `pip install -c https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt?h=stable/queens networking-sfc==6.0.0`
 
 Chỉnh sửa file cấu hình : `/etc/neutron/neutron.conf`
