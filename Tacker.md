@@ -1,6 +1,6 @@
 ### 1. Tacker
 
-Tacker là một dịch vụ về Network Function Virtualization (NFV), quản lý Virtual Network Functions (VNF) chạy trên nền tảng đám mây OpenStack. Ưu điểm là nhỏ gọn, dễ sử dụng, có thể cài đặt trên cùng 1 máy (All in one) đầy đủ với hệ thống OpenStack bằng DevStack. Nhược điểm là chưa đầy đủ chức năng và toàn vẹn nếu so sánh với ONAP, OpenBaton, OPNFV.
+Tacker là một dịch vụ về Network Function Virtualization (NFV), quản lý Virtual Network Functions (VNF) chạy trên nền tảng OpenStack. Ưu điểm là nhỏ gọn, dễ sử dụng, có thể cài đặt trên cùng 1 máy (All in one) đầy đủ với hệ thống OpenStack bằng DevStack. Nhược điểm là chưa đầy đủ chức năng và toàn vẹn nếu so sánh với ONAP, OpenBaton, OPNFV.
 
 
 ### 2. Kiến trúc của Tacker
