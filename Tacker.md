@@ -124,10 +124,10 @@ auth_type = password
 project_domain_name = Default
 user_domain_name = Default
 username = tacker
-project_name = services
+project_name = service
 password = Welcome123
 auth_url = http://192.168.239.190:5000
-auth_uri = http://192.168.239.190:5000
+www_authenticate_uri = http://192.168.239.190:5000
 
 [agent]
 root_helper = sudo /usr/bin/tacker-rootwrap /etc/tacker/rootwrap.conf
