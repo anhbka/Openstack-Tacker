@@ -66,7 +66,7 @@ Tạo user tacker, gán role admin và user tacker và tạo endpoint:
 
 ``` sh
 openstack user create --domain default --password Welcome123 tacker
-openstack role add --project services --user tacker admin
+openstack role add --project service --user tacker admin
 
 openstack service create --name tacker \
            --description "Tacker Project" nfv-orchestration
